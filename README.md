@@ -24,8 +24,8 @@ Your task is to build a project using the provided design files, integrate with 
 
 ## TODO
 
-- [ ] Initialize project with Next.js and typescript
-- [ ] Update README.md with suitable description
+- [x] Initialize project with Next.js and typescript
+- [x] Update README.md with suitable description
 - [ ] Add Tailwind CSS for theming and styling system
 - [ ] See all countries from the API on the homepage
 - [ ] Search for a country using an input field
