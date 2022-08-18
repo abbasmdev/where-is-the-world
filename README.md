@@ -27,12 +27,12 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] Initialize project with Next.js and typescript
 - [x] Update README.md with suitable description
 - [x] Add Tailwind CSS for theming and styling system
-- [ ] See all countries from the API on the homepage
+- [x] See all countries from the API on the homepage
 - [ ] Search for a country using an input field
 - [ ] Filter countries by region
 - [ ] Click on a country to see more detailed information on a separate page (client-side routing)
 - [ ] Clicking on border countries on the detail page should link the user to the detail of those countries.
-- [ ] <b>Bonus:</b> Toggle the color scheme between light and dark mode without using any 3rd party libraries
+- [x] <b>Bonus:</b> Toggle the color scheme between light and dark mode without using any 3rd party libraries
 - [ ] <b>Bonus:</b> Searching using the keywords Grmany or Grmny should also work
 - [ ] <b>Bonus:</b> Add sort functionality for both Population and Country Name
 - [ ] <b>Bonus:</b> Make all content server-side rendered and also have a fallback if the server-side render faces an error
