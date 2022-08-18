@@ -1,6 +1,8 @@
 import { MoonIcon as MoonIconOutline } from "@heroicons/react/outline";
 import { MoonIcon as MoonIconSolid } from "@heroicons/react/solid";
+import Link from "next/link";
 import { useThemeContext } from "ThemeContext";
+import Button from "./Button";
 const Header = () => {
   const { theme, toggleTheme } = useThemeContext();
   const isDarkMode = theme === "dark";
@@ -8,7 +10,13 @@ const Header = () => {
   return (
     <header className="bg-abWhite  shadow-sm  h-20  dark:bg-abBlue-100 ">
       <div className="flex items-center  px-5   h-full justify-between max-w-screen-abDesktop mx-auto">
-        <h3 className="font-extrabold">Where is the world?</h3>
+        <Link href={"/"} passHref>
+          <a>
+            <h3 className="font-extrabold text-lg cursor-pointer hover:opacity-90">
+              Where is the world?
+            </h3>
+          </a>
+        </Link>
         <button
           onClick={() => toggleTheme()}
           className="flex items-center gap-1"

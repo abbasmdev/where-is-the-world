@@ -30,15 +30,15 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] See all countries from the API on the homepage
 - [ ] Search for a country using an input field
 - [ ] Filter countries by region
-- [ ] Click on a country to see more detailed information on a separate page (client-side routing)
-- [ ] Clicking on border countries on the detail page should link the user to the detail of those countries.
+- [x] Click on a country to see more detailed information on a separate page (client-side routing)
+- [x] Clicking on border countries on the detail page should link the user to the detail of those countries.
 - [x] <b>Bonus:</b> Toggle the color scheme between light and dark mode without using any 3rd party libraries
 - [ ] <b>Bonus:</b> Searching using the keywords Grmany or Grmny should also work
 - [ ] <b>Bonus:</b> Add sort functionality for both Population and Country Name
 - [ ] <b>Bonus:</b> Make all content server-side rendered and also have a fallback if the server-side render faces an error
 - [ ] <b>Bonus:</b> Collect analytical data (in whichever way you prefer) using Google Analytics
 - [ ] <b>Bonus:</b> Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage
-- [ ] <b>Bonus:</b> Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
+- [x] <b>Bonus:</b> Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
 - [x] <b>Bonus:</b> Dockerize your application by creating an efficient Dockerfile
 - [ ] <b>Bonus:</b> Add unit tests for components
 - [ ] <b>Bonus:</b> Store the filters in the URL query strings and sync it with the component filter object
