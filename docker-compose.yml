@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  alibaba-countries:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "alibaba-countries"
+    ports:
+      - 127.0.0.1:9010:3000
