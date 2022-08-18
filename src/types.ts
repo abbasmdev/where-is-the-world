@@ -20,6 +20,10 @@ class Country {
     public capital = "",
     public region = "",
     public population = 0,
+    public nativeName = "",
+    public subregion = "",
+    public alpha2Code = "",
+    public borders: string[] = [],
     public flags: Flag | null = null
   ) {}
 
@@ -29,7 +33,21 @@ class Country {
     const capital = obj.capital;
     const region = obj.region;
     const population = +obj.population;
-    return new Country(name, capital, region, population, flags);
+    const nativeName = obj.nativeName;
+    const subregion = obj.subregion;
+    const borders = obj.borders;
+    const alpha2Code = obj.alpha2Code;
+    return new Country(
+      name,
+      capital,
+      region,
+      population,
+      nativeName,
+      subregion,
+      alpha2Code,
+      borders,
+      flags
+    );
   }
 }
 
