@@ -1,6 +1,6 @@
 # Alibaba Countries code challenge
 
-<b>Preview Link: https://c.abbasm.dev/</b>
+<b>Preview Link: https://c.abbasm.dev</b>
 
 ## Challenge Description
 
