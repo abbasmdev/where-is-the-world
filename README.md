@@ -1,5 +1,7 @@
 # Alibaba Countries code challenge
 
+<b>Preview Link: https://c.abbasm.dev/</b>
+
 ## Challenge Description
 
 Your task is to build a project using the provided design files, integrate with the REST Countries V2 API to pull country data, and display it as demonstrated in the provided designs. You will find both a mobile and desktop version in light and dark mode color schemes for each page. Note that the final implementation doesn't have to be pixel perfect and anything close to the photos will suffice.
@@ -42,7 +44,7 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] <b>Bonus:</b> Dockerize your application by creating an efficient Dockerfile
 - [ ] <b>Bonus:</b> Add unit tests for components
 - [x] <b>Bonus:</b> Store the filters in the URL query strings and sync it with the component filter object
-- [ ] <b>Bonus:</b> Add lazy loading for country images and list
+- [ ] <b>Bonus:</b> Add lazy loading for country images and list.
 
 ## Getting Started
 
