@@ -1,38 +1,46 @@
-import CountryCard from "components/CountryCard";
 import { Filters } from "components";
+import CountryCard from "components/CountryCard";
+import useFilters, { SortByFilter } from "components/Filters/useFilters";
 import { fetchCountries } from "core/api";
 import Link from "next/link";
+import { useMemo } from "react";
 import { useAsync } from "react-async-hook";
-import useFilters from "components/Filters/useFilters";
 import { Country } from "types";
 
 const CountriesList = () => {
-  const { countryName } = useFilters();
+  const {
+    countryName: qCountryName,
+    region: qRegion,
+    sortBy: qSortBy,
+  } = useFilters();
 
   const { loading, result, error } = useAsync(fetchCountries, []);
 
-  const filterAndSortCountriesList = (
-    countriesList: Country[],
-    countryNameFilter: string = ""
-  ): Country[] => {
-    return countriesList.filter((c) => {
-      let isFiltered = true;
-      if (countryNameFilter)
-        isFiltered = c.name
-          .toLocaleLowerCase()
-          .includes(countryNameFilter.toLocaleLowerCase());
-
-      return isFiltered;
-    });
-  };
-
-  const countriesList = filterAndSortCountriesList(result || [], countryName);
+  const countriesList: Country[] = useMemo(() => {
+    if (!result) return [];
+    return (
+      result
+        .filter((c) =>
+          qCountryName
+            ? c.name.toLowerCase().includes(qCountryName.toLowerCase())
+            : true
+        )
+        .filter((c) => (qRegion ? c.region === qRegion : true))
+        .sort((a, b) => {
+          if (qSortBy === "Population") return a.population - b.population;
+          if (qSortBy === "CountryName") return a.name.localeCompare(b.name);
+          return 0;
+        }) || []
+    );
+  }, [qCountryName, qRegion, qSortBy, result]);
 
   const isSuccess = !loading && !error;
   const isResultEmpty = isSuccess && !countriesList.length;
+
   return (
     <main className="flex flex-col w-full gap-10 px-5  max-w-screen-abDesktop text-sm pt-10 mx-auto">
       <Filters />
+
       {loading && <span>Loading</span>}
       {isResultEmpty && <span>No result found</span>}
       {isSuccess && (
