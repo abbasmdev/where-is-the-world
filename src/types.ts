@@ -1,11 +1,3 @@
-enum RegionEnum {
-  "Africa" = "Africa",
-  "America" = "America",
-  "Asia" = "Asia",
-  "Europe" = "Europe",
-  "Oceania" = "Oceania",
-}
-
 class Flag {
   constructor(public svg = "", public png = "") {}
 
@@ -51,4 +43,4 @@ class Country {
   }
 }
 
-export { Country, Flag, RegionEnum };
+export { Country, Flag };
