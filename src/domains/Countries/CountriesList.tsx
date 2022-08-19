@@ -1,3 +1,4 @@
+import { areLettersInTextWithOrder } from "core/utils";
 import Head from "next/head";
 import Link from "next/link";
 import { FC, useMemo } from "react";
@@ -20,7 +21,10 @@ const CountriesList: FC<{ countriesList: Country[] }> = ({
       originalCountriesList
         .filter((c) =>
           qCountryName
-            ? c.name.toLowerCase().includes(qCountryName.toLowerCase())
+            ? areLettersInTextWithOrder(
+                c.name.toLowerCase(),
+                qCountryName.toLowerCase()
+              )
             : true
         )
         .filter((c) => (qRegion ? c.region === qRegion : true))
