@@ -1,11 +1,13 @@
 import { ArrowLeftIcon } from "@heroicons/react/solid";
+
 import Button from "components/Button";
-import CountryBorders from "Containers/CountryBorders";
+
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { Country } from "types";
+import { CountryBorders } from "./components";
 
 const CountryDetail: FC<{ country: Country; borderCountries: Country[] }> = ({
   country,
@@ -79,24 +81,18 @@ const CountryDetail: FC<{ country: Country; borderCountries: Country[] }> = ({
 
                   <div className="flex flex-col gap-2">
                     <p>
-                      <span className="font-semibold">Native Name:</span>{" "}
-                      {country?.nativeName}
+                      <span className="font-semibold">Top Level Domain:</span>{" "}
+                      {country?.topLevelDomain?.join(", ")}
                     </p>
                     <p>
-                      <span className="font-semibold">Population:</span>{" "}
-                      {Intl.NumberFormat().format(country?.population || 0)}
+                      <span className="font-semibold">Currencies:</span>{" "}
+                      {country?.currencies
+                        ?.map((item) => item.name)
+                        ?.join(", ")}
                     </p>
                     <p>
-                      <span className="font-semibold">Region:</span>{" "}
-                      {country?.region}
-                    </p>
-                    <p>
-                      <span className="font-semibold">Sub Region:</span>{" "}
-                      {country?.subregion}
-                    </p>
-                    <p>
-                      <span className="font-semibold">Capital:</span>{" "}
-                      {country?.capital}
+                      <span className="font-semibold">Languages:</span>{" "}
+                      {country?.languages?.map((item) => item.name)?.join(", ")}
                     </p>
                   </div>
                 </div>
