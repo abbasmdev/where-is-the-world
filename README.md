@@ -36,8 +36,8 @@ Your task is to build a project using the provided design files, integrate with 
 - [ ] <b>Bonus:</b> Searching using the keywords Grmany or Grmny should also work
 - [x] <b>Bonus:</b> Add sort functionality for both Population and Country Name
 - [x] <b>Bonus:</b> Make all content server-side rendered and also have a fallback if the server-side render faces an error
-- [ ] <b>Bonus:</b> Collect analytical data (in whichever way you prefer) using Google Analytics
-- [ ] <b>Bonus:</b> <span style="text-decoration: line-through;">Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage</span> <b style="color:yellow">Tailwind css generated css style file is not more thank 3 KB, skipped this one</b>
+- [x] <b>Bonus:</b> Collect analytical data (in whichever way you prefer) using Google Analytics
+- [ ] <b>Bonus:</b> <span style="text-decoration: line-through;">Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage</span> <b style="color:yellow">Tailwind css generated css style file is not more than 3 KB, skipped this one</b>
 - [x] <b>Bonus:</b> Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
 - [x] <b>Bonus:</b> Dockerize your application by creating an efficient Dockerfile
 - [ ] <b>Bonus:</b> Add unit tests for components
