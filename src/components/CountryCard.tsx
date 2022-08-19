@@ -1,25 +1,23 @@
 import Image from "next/image";
 import React, { FC } from "react";
 import { Country } from "types";
-import clx from "classnames";
 
 const CountryCard: FC<{
   country: Country;
-  className?: string;
-}> = ({ country, className }) => {
+}> = ({ country }) => {
   const { population, region, capital, name, flags } = country;
   return (
-    <div
-      className={clx(
-        "shadow-md rounded-md max-w-xs w-full dark:bg-abBlue-100 pb-12",
-        className
+    <div className="shadow-md rounded-md max-w-xs w-full dark:bg-abBlue-100 pb-12 hover:scale-105  duration-200">
+      {country?.flags?.svg && (
+        <Image
+          alt={`${country?.name} flag`}
+          src={country.flags.png}
+          layout="responsive"
+          width={"100%"}
+          height="60%"
+          loading="lazy"
+        />
       )}
-    >
-      <img
-        alt={`${name} flag`}
-        src={flags?.png}
-        className="h-[190px] w-full  rounded-tr-md rounded-tl-md"
-      />
 
       <h3 className="font-bold p-6">{name}</h3>
       <div className="px-6 flex flex-col gap-1 ">

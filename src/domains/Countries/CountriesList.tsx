@@ -53,10 +53,7 @@ const CountriesList: FC<{ countriesList: Country[] }> = ({
                 passHref
               >
                 <a className="max-w-xs w-full">
-                  <CountryCard
-                    country={country}
-                    className="hover:scale-105  duration-200"
-                  />
+                  <CountryCard country={country} />
                 </a>
               </Link>
             ))}

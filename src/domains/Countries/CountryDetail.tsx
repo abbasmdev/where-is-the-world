@@ -2,6 +2,7 @@ import { ArrowLeftIcon } from "@heroicons/react/solid";
 import Button from "components/Button";
 import CountryBorders from "Containers/CountryBorders";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { FC } from "react";
 import { Country } from "types";
@@ -35,11 +36,19 @@ const CountryDetail: FC<{ country: Country; borderCountries: Country[] }> = ({
 
         {
           <div className="pt-20 flex flex-col abDesktop:flex-row gap-10">
-            <img
-              alt={`${country?.name} flag`}
-              src={country?.flags?.svg}
-              className="h-3/4 w-full abDesktop:w-1/2 "
-            />
+            {country?.flags?.svg && (
+              <div className=" abDesktop:w-1/2">
+                <Image
+                  alt={`${country?.name} flag`}
+                  src={country.flags.svg}
+                  layout="responsive"
+                  width={"100%"}
+                  height="60%"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
             <div className="flex flex-col gap-10 justify-center">
               <h3 className="font-extrabold">{country?.name}</h3>
 
