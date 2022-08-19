@@ -28,7 +28,7 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] Update README.md with suitable description
 - [x] Add Tailwind CSS for theming and styling system
 - [x] See all countries from the API on the homepage
-- [ ] Search for a country using an input field
+- [x] Search for a country using an input field
 - [ ] Filter countries by region
 - [x] Click on a country to see more detailed information on a separate page (client-side routing)
 - [x] Clicking on border countries on the detail page should link the user to the detail of those countries.
@@ -41,7 +41,7 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] <b>Bonus:</b> Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
 - [x] <b>Bonus:</b> Dockerize your application by creating an efficient Dockerfile
 - [ ] <b>Bonus:</b> Add unit tests for components
-- [ ] <b>Bonus:</b> Store the filters in the URL query strings and sync it with the component filter object
+- [x] <b>Bonus:</b> Store the filters in the URL query strings and sync it with the component filter object
 - [ ] <b>Bonus:</b> Add lazy loading for country images and list
 
 ## Getting Started
