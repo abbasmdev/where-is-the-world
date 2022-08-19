@@ -1,10 +1,9 @@
-import { Filters } from "components";
-import CountryCard from "components/CountryCard";
-import useFilters from "components/Filters/useFilters";
 import Head from "next/head";
 import Link from "next/link";
 import { FC, useMemo } from "react";
 import { Country } from "types";
+import { CountryCard, Filters } from "./components";
+import useFilters from "./components/Filters/useFilters";
 
 const CountriesList: FC<{ countriesList: Country[] }> = ({
   countriesList: originalCountriesList,
@@ -48,7 +47,7 @@ const CountriesList: FC<{ countriesList: Country[] }> = ({
           <div className="flex flex-wrap items-center justify-center gap-9">
             {countriesList.map((country) => (
               <Link
-                href={`/${country?.alpha2Code}`}
+                href={`/${country?.alpha2Code.toLowerCase()}`}
                 key={country.name}
                 passHref
               >

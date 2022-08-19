@@ -19,12 +19,12 @@ const Header = () => {
         </Link>
         <button
           onClick={() => toggleTheme()}
-          className="flex items-center gap-1"
+          className="flex items-center gap-1 group"
         >
           {isDarkMode ? (
-            <MoonIconSolid className="w-5" />
+            <MoonIconSolid className="w-5 group-hover:scale-110" />
           ) : (
-            <MoonIconOutline className="w-5" />
+            <MoonIconOutline className="w-5 group-hover:scale-110" />
           )}
           <span>{isDarkMode ? "Light" : "Dark"} Mode</span>
         </button>
