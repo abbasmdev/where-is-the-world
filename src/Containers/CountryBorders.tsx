@@ -22,7 +22,7 @@ const CountryBorders: FC<{ country: Country }> = ({ country }) => {
       {result?.map((c) => (
         <Link href={`/${c.alpha2Code}`} type="li" key={c.name}>
           <a>
-            <Button className="w-[120px]  py-1  text-center px-2 overflow-hidden text-ellipsis whitespace-pre">
+            <Button className="w-[140px]  !py-1  text-center !px-3 overflow-hidden text-ellipsis whitespace-pre">
               {c.name}
             </Button>
           </a>
