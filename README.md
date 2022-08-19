@@ -33,7 +33,7 @@ Your task is to build a project using the provided design files, integrate with 
 - [x] Click on a country to see more detailed information on a separate page (client-side routing)
 - [x] Clicking on border countries on the detail page should link the user to the detail of those countries.
 - [x] <b>Bonus:</b> Toggle the color scheme between light and dark mode without using any 3rd party libraries
-- [ ] <b>Bonus:</b> Searching using the keywords Grmany or Grmny should also work
+- [x] <b>Bonus:</b> Searching using the keywords Grmany or Grmny should also work
 - [x] <b>Bonus:</b> Add sort functionality for both Population and Country Name
 - [x] <b>Bonus:</b> Make all content server-side rendered and also have a fallback if the server-side render faces an error
 - [x] <b>Bonus:</b> Collect analytical data (in whichever way you prefer) using Google Analytics
