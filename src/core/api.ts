@@ -8,6 +8,7 @@ const httpClient = axios.create({
 const fetchCountries = async (): Promise<Country[]> => {
   const res = await httpClient.get("/all");
   const data: object[] = res.data || [];
+
   const countriesList: Country[] =
     data?.map((item) => Country.fromJSON(item)) || [];
 
