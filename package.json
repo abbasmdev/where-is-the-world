@@ -1,4 +1,9 @@
 {
+  "author": {
+    "email": "abbasmdev@gmail.com",
+    "name": "Abbas Moharami",
+    "url": "https://gitlab.com/abbasmdev/alibaba-countries"
+  },
   "name": "alibaba-countries",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +20,6 @@
     "classnames": "^2.3.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-async-hook": "^4.0.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
