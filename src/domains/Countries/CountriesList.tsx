@@ -1,25 +1,24 @@
 import { Filters } from "components";
 import CountryCard from "components/CountryCard";
-import useFilters, { SortByFilter } from "components/Filters/useFilters";
-import { fetchCountries } from "core/api";
+import useFilters from "components/Filters/useFilters";
+import Head from "next/head";
 import Link from "next/link";
-import { useMemo } from "react";
-import { useAsync } from "react-async-hook";
+import { FC, useMemo } from "react";
 import { Country } from "types";
 
-const CountriesList = () => {
+const CountriesList: FC<{ countriesList: Country[] }> = ({
+  countriesList: originalCountriesList,
+}) => {
   const {
     countryName: qCountryName,
     region: qRegion,
     sortBy: qSortBy,
   } = useFilters();
 
-  const { loading, result, error } = useAsync(fetchCountries, []);
-
   const countriesList: Country[] = useMemo(() => {
-    if (!result) return [];
+    if (!originalCountriesList) return [];
     return (
-      result
+      originalCountriesList
         .filter((c) =>
           qCountryName
             ? c.name.toLowerCase().includes(qCountryName.toLowerCase())
@@ -32,32 +31,39 @@ const CountriesList = () => {
           return 0;
         }) || []
     );
-  }, [qCountryName, qRegion, qSortBy, result]);
+  }, [qCountryName, qRegion, qSortBy, originalCountriesList]);
 
-  const isSuccess = !loading && !error;
-  const isResultEmpty = isSuccess && !countriesList.length;
+  const isResultEmpty = !countriesList.length;
 
   return (
-    <main className="flex flex-col w-full gap-10 px-5  max-w-screen-abDesktop text-sm pt-10 mx-auto">
-      <Filters />
+    <>
+      <Head>
+        <title>Alibaba Countries List - Home</title>
+      </Head>
+      <main className="flex flex-col w-full gap-10 px-5  max-w-screen-abDesktop text-sm pt-10 mx-auto">
+        <Filters />
 
-      {loading && <span>Loading</span>}
-      {isResultEmpty && <span>No result found</span>}
-      {isSuccess && (
-        <div className="flex flex-wrap items-center justify-center gap-9">
-          {countriesList.map((country) => (
-            <Link href={`/${country?.alpha2Code}`} key={country.name} passHref>
-              <a className="max-w-xs w-full">
-                <CountryCard
-                  country={country}
-                  className="hover:scale-105  duration-200"
-                />
-              </a>
-            </Link>
-          ))}
-        </div>
-      )}
-    </main>
+        {isResultEmpty && <span>No result found</span>}
+        {
+          <div className="flex flex-wrap items-center justify-center gap-9">
+            {countriesList.map((country) => (
+              <Link
+                href={`/${country?.alpha2Code}`}
+                key={country.name}
+                passHref
+              >
+                <a className="max-w-xs w-full">
+                  <CountryCard
+                    country={country}
+                    className="hover:scale-105  duration-200"
+                  />
+                </a>
+              </Link>
+            ))}
+          </div>
+        }
+      </main>
+    </>
   );
 };
 

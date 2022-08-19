@@ -27,17 +27,17 @@ const useFilters = () => {
   const setCountryFilter = (cName: string) => {
     router.query.countryName = cName;
     if (!cName) delete router.query.countryName;
-    router.push(router);
+    router.push(router, undefined, { shallow: true });
   };
 
   const setSortByFilter = (val: SortByFilterKeys) => {
     router.query.sortBy = val;
-    router.push(router);
+    router.push(router, undefined, { shallow: true });
   };
 
   const setRegionFilter = (val: RegionFilterKeys) => {
     router.query.region = val;
-    router.push(router);
+    router.push(router, undefined, { shallow: true });
   };
 
   return {

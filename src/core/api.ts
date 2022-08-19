@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Country, Flag } from "../types";
+import { Country } from "../types";
 
 const httpClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -24,7 +24,7 @@ const fetchCountryByAlpha2Code = async (
   return Country.fromJSON(data);
 };
 
-const fetchCountriesByByAlpha2Codes = async (
+const fetchCountriesByAlpha2Codes = async (
   alpha2Codes: string[]
 ): Promise<Country[]> => {
   const formatted = alpha2Codes?.reduce(
@@ -39,9 +39,10 @@ const fetchCountriesByByAlpha2Codes = async (
 
   return countriesList;
 };
+
 export {
   httpClient,
   fetchCountries,
   fetchCountryByAlpha2Code,
-  fetchCountriesByByAlpha2Codes,
+  fetchCountriesByAlpha2Codes,
 };
