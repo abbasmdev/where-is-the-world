@@ -15,7 +15,8 @@ const CountryDetail: FC<{ country: Country; borderCountries: Country[] }> = ({
 }) => {
   const router = useRouter();
 
-  const pageTitle = `Alibaba Countries List - ${country?.name}`;
+  const pageTitle = `Countries List - ${country?.name}`;
+
   const handleBackClick = () => {
     if (window.history.length > 2) router.back();
     else router.push("/");

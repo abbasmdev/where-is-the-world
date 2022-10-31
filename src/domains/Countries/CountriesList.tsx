@@ -41,7 +41,7 @@ const CountriesList: FC<{ countriesList: Country[] }> = ({
   return (
     <>
       <Head>
-        <title>Alibaba Countries List - Home</title>
+        <title>Countries List - Home</title>
       </Head>
       <main className="flex flex-col w-full gap-10 px-5  max-w-screen-abDesktop text-sm pt-10 mx-auto">
         <Filters />
